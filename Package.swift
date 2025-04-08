@@ -6,7 +6,7 @@ let package = Package(
     name: "swift-secp256k1",
     products: [
         // WARNING: These APIs should not be considered stable and may change at any time.
-        .library(name: "secp256k1-ios", targets: ["secp256k1"]),
+        .library(name: "secp256k1-ios", targets: ["swift-secp256k1"]),
         .library(name: "zkp", targets: ["zkp"])
     ],
     dependencies: [
@@ -16,7 +16,7 @@ let package = Package(
         .package(url: "https://github.com/realm/SwiftLint.git", exact: "0.59.0")
     ],
     targets: [
-        .target(name: "secp256k1-ios", dependencies: ["secp256k1_bindings"]),
+        .target(name: "swift-secp256k1", dependencies: ["secp256k1_bindings"]),
         .target(name: "zkp", dependencies: ["zkp_bindings"]),
         .target(
             name: "secp256k1_bindings",
